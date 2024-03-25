@@ -31,9 +31,9 @@ class FileDatasource:
         accelerometer_data = self._read_accelerometer_data()
         gps_data = self._read_gps_data()
         parking_data = self._read_parking_data()
-        time = datetime.now()
+        timestamp = datetime.now()
 
-        return AggregatedData(accelerometer=accelerometer_data, gps=gps_data, parking=parking_data, time=time)
+        return AggregatedData(accelerometer=accelerometer_data, gps=gps_data, parking=parking_data, timestamp=timestamp)
 
     def _read_accelerometer_data(self) -> Accelerometer:
         if not self.accelerometer_file:
